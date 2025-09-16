@@ -1,0 +1,48 @@
+{
+  "name": "hr-data-normalizer-electron",
+  "version": "3.1.0",
+  "description": "HR 데이터 정규화 에이전트 - Electron 데스크톱 앱",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "concurrently \"npm run build-web\" \"electron .\"",
+    "build-web": "cd .. && npm run build && xcopy dist local_app\\dist /E /I /Y",
+    "build": "npm run build-web && electron-builder",
+    "dist": "npm run build-web && electron-builder --publish=never"
+  },
+  "devDependencies": {
+    "electron": "^27.0.0",
+    "electron-builder": "^24.6.4",
+    "concurrently": "^8.2.2"
+  },
+  "build": {
+    "appId": "com.hrtools.data-normalizer",
+    "productName": "HR 데이터 정규화 도구",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "dist/**/*"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.ico"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "assets/icon.icns"
+    },
+    "linux": {
+      "target": "AppImage",
+      "icon": "assets/icon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "author": "HR Tools",
+  "license": "MIT"
+}
