@@ -75,8 +75,7 @@ npm run dist
 - ✅ **원클릭 실행**: VBScript로 간편 시작
 
 ## 📸 스크린샷
-
-> 추후 앱 실행 화면 스크린샷 추가 예정
+<img width="1013" height="552" alt="image" src="https://github.com/user-attachments/assets/b32bf8bf-9e6c-40ab-8496-4082fb84545c" />
 
 ## 📁 프로젝트 구조
 
